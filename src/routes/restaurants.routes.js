@@ -1,6 +1,7 @@
 // src/routes/restaurants.routes.js
 const express = require('express');
 const restaurantsController = require('../controllers/restaurants.controller');
+console.log('DEBUG restaurantsController:', restaurantsController);
 
 const router = express.Router();
 
