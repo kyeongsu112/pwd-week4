@@ -4,6 +4,7 @@ const cors = require('cors');
 const restaurantsRouter = require('./routes/restaurants.routes');
 const notFound = require('./middleware/notFound.middleware');
 const errorHandler = require('./middleware/error.middleware');
+const submissionsRouter = require('./routes/submissions.routes');
 
 function createApp() {
   const app = express();
@@ -11,6 +12,8 @@ function createApp() {
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use('/api/submissions', submissionsRouter);
+
 
   app.get('/health', (req, res) => {
     res.json({ status: 'ok' });
